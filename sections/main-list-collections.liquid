@@ -23,6 +23,19 @@
       assign paginate_by = 28
     endif
   -%}
+
+  <ul class="list-unstyled">
+    {% for link in linklists.collezioni.links -%}
+      <li class="">
+        <a
+          href="{{ link.url }}"
+          class="link link--text list-menu__item list-menu__item--link{% if link.active %} list-menu__item--active{% endif %}"
+        >
+          {{ link.title | link_to: link.url }}
+        </a>
+      </li>
+    {%- endfor -%}
+  </ul>
   {%- paginate collections by paginate_by -%}
     <ul
       class="collection-list grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ section.settings.columns_mobile }}-col-tablet-down"

@@ -1,10 +1,38 @@
 {
   "sections": {
+    "c7543273-c15a-4bec-97c8-93c886769a5d": {
+      "type": "video-banner",
+      "settings": {
+        "heading": "",
+        "heading_size": "h1",
+        "enable_video_looping": true,
+        "video": "shopify:\/\/files\/videos\/Mesoamerican Series_Unboxing_Video_16-9.mp4",
+        "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+        "description": "",
+        "full_width": true,
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "a7742cc2-b436-4c7c-abda-bb2eee8f3e95": {
+      "type": "custom-liquid",
+      "custom_css": [
+        ".heading-container {display: flex; align-items: center; justify-content: center; padding: 0 1.6rem;}"
+      ],
+      "settings": {
+        "custom_liquid": "<div class=\"heading-container\">\n<p class=\"text-title\">Galapagos is a Milan-based brand, all about objects, furniture and whimsical stories.<\/p><\/div>",
+        "color_scheme": "",
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
+    },
     "image_banner": {
       "type": "image-banner",
       "blocks": {
         "heading": {
           "type": "heading",
+          "disabled": true,
           "settings": {
             "heading": "Image banner",
             "heading_size": "h0"
@@ -12,16 +40,18 @@
         },
         "text": {
           "type": "text",
+          "disabled": true,
           "settings": {
-            "text": "Give customers details about the banner image(s) or content on the template.",
+            "text": "Give customers details about the banner image(s) or content on the template...",
             "text_style": "body"
           }
         },
         "button": {
           "type": "buttons",
+          "disabled": true,
           "settings": {
-            "button_label_1": "Shop all",
-            "button_link_1": "shopify://collections/all",
+            "button_label_1": "Discover the collection",
+            "button_link_1": "shopify:\/\/collections\/automated-collection",
             "button_style_secondary_1": true,
             "button_label_2": "",
             "button_link_2": "",
@@ -35,176 +65,182 @@
         "button"
       ],
       "settings": {
+        "image": "shopify:\/\/shop_images\/Spooky_Castle_Series_Home_Page-01.webp",
         "image_overlay_opacity": 40,
-        "image_height": "large",
+        "image_height": "adapt",
         "desktop_content_position": "bottom-center",
         "show_text_box": false,
         "desktop_content_alignment": "center",
         "color_scheme": "inverse",
+        "image_behavior": "none",
         "mobile_content_alignment": "center",
         "stack_images_on_mobile": false,
         "show_text_below": false
       }
     },
-    "rich_text": {
-      "type": "rich-text",
+    "39f7a6fa-a6bb-4b79-ae4d-42c80592bf53": {
+      "type": "custom-liquid",
+      "custom_css": [
+        ".heading-container {display: flex; align-items: center; justify-content: center; padding: 0 1.6rem;}"
+      ],
+      "settings": {
+        "custom_liquid": "<div class=\"heading-container\">\n<a href=\"\/collections\/a-monumental-adventure-the-mesoamerican-series\" class=\"link text-button\">Discover the collection<\/a><\/div>",
+        "color_scheme": "",
+        "padding_top": 32,
+        "padding_bottom": 32
+      }
+    },
+    "6c5742c9-5757-4b0e-b5c2-3d724a0fcdfb": {
+      "type": "image-banner",
       "blocks": {
-        "heading": {
+        "bf0bb696-6e8c-44b5-88b8-13fd206f7d7e": {
           "type": "heading",
+          "disabled": true,
           "settings": {
-            "heading": "Talk about your brand",
-            "heading_size": "h1"
+            "heading": "Image banner",
+            "heading_size": "h0"
           }
         },
-        "text": {
+        "bcb99c7d-1c57-4715-a290-85ae3c78e3b9": {
           "type": "text",
+          "disabled": true,
           "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
+            "text": "Give customers details about the banner image(s) or content on the template...",
+            "text_style": "body"
+          }
+        },
+        "e1a950ba-0e44-443f-a673-a1e787e8c12c": {
+          "type": "buttons",
+          "disabled": true,
+          "settings": {
+            "button_label_1": "Discover the collection",
+            "button_link_1": "shopify:\/\/collections\/automated-collection",
+            "button_style_secondary_1": true,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
           }
         }
       },
       "block_order": [
-        "heading",
-        "text"
+        "bf0bb696-6e8c-44b5-88b8-13fd206f7d7e",
+        "bcb99c7d-1c57-4715-a290-85ae3c78e3b9",
+        "e1a950ba-0e44-443f-a673-a1e787e8c12c"
       ],
       "settings": {
-        "color_scheme": "background-1",
-        "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 0
+        "image": "shopify:\/\/shop_images\/Mesoamerican_Series_Home_Page-01.webp",
+        "image_overlay_opacity": 40,
+        "image_height": "adapt",
+        "desktop_content_position": "bottom-center",
+        "show_text_box": false,
+        "desktop_content_alignment": "center",
+        "color_scheme": "inverse",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": false,
+        "show_text_below": false
       }
     },
-    "featured_collection": {
+    "f76f0a61-251b-4c40-afe0-367fccf09f7b": {
+      "type": "custom-liquid",
+      "custom_css": [
+        ".heading-container {display: flex; align-items: center; justify-content: center; padding: 0 1.6rem;}"
+      ],
+      "settings": {
+        "custom_liquid": "<div class=\"heading-container\">\n<a href=\"\/collections\/all\" class=\"link text-button\">Go to the shop<\/a><\/div>",
+        "color_scheme": "",
+        "padding_top": 32,
+        "padding_bottom": 32
+      }
+    },
+    "d1ff21ba-6334-43b1-b2a8-3432721496fd": {
       "type": "featured-collection",
-      "settings": {
-        "title": "Featured products",
-        "heading_size": "h2",
-        "collection": "all",
-        "products_to_show": 8,
-        "columns_desktop": 4,
-        "color_scheme": "background-1",
-        "show_view_all": false,
-        "swipe_on_mobile": false,
-        "image_ratio": "adapt",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "columns_mobile": "2",
-        "padding_top": 28,
-        "padding_bottom": 36
-      }
-    },
-    "collage": {
-      "type": "collage",
-      "blocks": {
-        "collection-0": {
-          "type": "collection",
-          "settings": {
-            "collection": ""
-          }
-        },
-        "product": {
-          "type": "product",
-          "settings": {
-            "product": "",
-            "second_image": false
-          }
-        },
-        "collection-1": {
-          "type": "collection",
-          "settings": {
-            "collection": ""
-          }
-        }
-      },
-      "block_order": [
-        "collection-0",
-        "product",
-        "collection-1"
-      ],
-      "settings": {
-        "heading": "Multimedia collage",
-        "heading_size": "h2",
-        "desktop_layout": "left",
-        "mobile_layout": "collage",
-        "color_scheme": "background-1",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "video": {
-      "type": "video",
-      "settings": {
-        "heading": "",
-        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-        "heading_size": "h1",
-        "description": "",
-        "full_width": false,
-        "color_scheme": "background-1",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "multicolumn": {
-      "type": "multicolumn",
-      "blocks": {
-        "column1": {
-          "type": "column",
-          "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column2": {
-          "type": "column",
-          "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column3": {
-          "type": "column",
-          "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "column1",
-        "column2",
-        "column3"
-      ],
       "settings": {
         "title": "",
         "heading_size": "h1",
-        "image_width": "third",
-        "image_ratio": "adapt",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "it-will-give-you-goosebumps-the-spooky-castle-series",
+        "products_to_show": 3,
         "columns_desktop": 3,
-        "column_alignment": "center",
-        "background_style": "none",
-        "button_label": "",
-        "button_link": "",
+        "full_width": false,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "",
+        "image_ratio": "portrait",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "columns_mobile": "2",
         "swipe_on_mobile": false,
-        "color_scheme": "background-1",
-        "columns_mobile": "1",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "7aade2a8-3dc2-472a-95b7-a53c41e9ebf1": {
+      "type": "image-banner",
+      "blocks": {
+        "65668556-6c5b-42bf-988e-009fcb83fc8c": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "Image banner",
+            "heading_size": "h0"
+          }
+        },
+        "5b8a13c9-be9c-41d0-96d7-ba757fffeb06": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "Give customers details about the banner image(s) or content on the template...",
+            "text_style": "body"
+          }
+        },
+        "60ccd90d-04f1-4041-92d5-be9925d8c914": {
+          "type": "buttons",
+          "disabled": true,
+          "settings": {
+            "button_label_1": "Discover the collection",
+            "button_link_1": "shopify:\/\/collections\/automated-collection",
+            "button_style_secondary_1": true,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "65668556-6c5b-42bf-988e-009fcb83fc8c",
+        "5b8a13c9-be9c-41d0-96d7-ba757fffeb06",
+        "60ccd90d-04f1-4041-92d5-be9925d8c914"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Mesoamerican_Series_Group.webp",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "desktop_content_position": "bottom-center",
+        "show_text_box": false,
+        "desktop_content_alignment": "center",
+        "color_scheme": "inverse",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": false,
+        "show_text_below": false
       }
     }
   },
   "order": [
+    "c7543273-c15a-4bec-97c8-93c886769a5d",
+    "a7742cc2-b436-4c7c-abda-bb2eee8f3e95",
     "image_banner",
-    "rich_text",
-    "featured_collection",
-    "collage",
-    "video",
-    "multicolumn"
+    "39f7a6fa-a6bb-4b79-ae4d-42c80592bf53",
+    "6c5742c9-5757-4b0e-b5c2-3d724a0fcdfb",
+    "f76f0a61-251b-4c40-afe0-367fccf09f7b",
+    "d1ff21ba-6334-43b1-b2a8-3432721496fd",
+    "7aade2a8-3dc2-472a-95b7-a53c41e9ebf1"
   ]
 }

@@ -1,23 +1,88 @@
 <style type="text/css">
   .template-404 .title + * {
     margin-top: 1rem;
+    margin: 2rem;
+    line-height: 4rem;
+  }
+
+  p {
+    font-size: 1.6rem;
+  }
+
+  .template-404 {
+    display: flex;
+    flex-direction: column;
+    height: 75vh;
+  }
+  .template-404 .title + * {
+    margin-top: 3rem;
+  }
+
+  .title {
+    margin-top: 8rem;
+    font-size: 14rem;
+  }
+
+  .message-404 {
+    color: #000;
+    text-align: center;
+    font-size: 2.8rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 2rem; /* 114.286% */
+    text-transform: uppercase;
+    flex-grow: 1;
+  }
+
+  body {
+    background-image: url('https://cdn.shopify.com/s/files/1/0791/5464/3250/files/Frame_80_1.jpg?v=1694852008') !important;
+    background-color: #9cc0f8 !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: 120% !important;
   }
 
   @media screen and (min-width: 750px) {
-    .template-404 .title + * {
-      margin-top: 2rem;
+    .title {
+      margin-top: 6rem;
+      margin-bottom: 2rem;
     }
+    .template-404 .title + * {
+      margin-top: 0rem;
+    }
+    body {
+      background-position: center !important;
+      background-size: 70% !important;
+    }
+  }
+
+  @media screen and (min-width: 1728px) {
+    .message-404 {
+      font-size: 3.8rem;
+    }
+  }
+
+  .header-wrapper {
+    background-color: #9cc0f8 !important;
+  }
+
+  #shopify-section-sections--20864678494514__a8c90b9e-eb93-4342-acb1-af445c8a3d4c {
+    display: none;
+  }
+
+  .back-button {
+    text-decoration: none;
+    color: black;
   }
 </style>
 
-<div class="template-404 page-width page-margin center">
-  <p>
-    {{ 'templates.404.subtext' | t }}
-  </p>
+<div class="template-404 page-width center">
   <h1 class="title">
-    {{ 'templates.404.title' | t }}
+    {{ 'templates.404.subtext' | t }}
   </h1>
-  <a href="{{ routes.all_products_collection_url }}" class="button">
-    {{ 'general.continue_shopping' | t }}
-  </a>
+  <p class="message-404">
+    {{ 'templates.404.title' | t }}
+  </p>
+  <p>Want another Galapagos?</p>
+  <a href="{{ shop.url }}" class="back-button text-button"> Back to homepage </a>
 </div>

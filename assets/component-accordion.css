@@ -2,7 +2,14 @@
   display: flex;
   position: relative;
   line-height: 1;
-  padding: 1.5rem 0;
+  padding: 2.2rem 0;
+}
+
+@media screen and (min-width: 750px) {
+  .accordion summary {
+    padding: 1.2rem 0;
+  }
+
 }
 
 .accordion .summary__title {
@@ -10,20 +17,26 @@
   flex: 1;
 }
 
-.accordion .summary__title + .icon-caret {
+.accordion .summary__title+.icon-caret {
   height: calc(var(--font-heading-scale) * 0.6rem);
 }
 
-.accordion + .accordion {
+.accordion+.accordion {
   margin-top: 0;
   border-top: none;
 }
 
+.accordion:first-child {
+  border-top: none;
+}
+
 .accordion {
-  margin-top: 2.5rem;
+  margin-top: -1px;
+  margin-right: 0;
   margin-bottom: 0;
-  border-top: 0.1rem solid rgba(var(--color-foreground), 0.08);
-  border-bottom: 0.1rem solid rgba(var(--color-foreground), 0.08);
+  border-top: 0.1rem solid rgba(var(--color-foreground));
+  border-bottom: 0.1rem solid rgba(var(--color-foreground));
+  min-height: var(--button-height);
 }
 
 .accordion__title {
@@ -42,17 +55,34 @@
   width: calc(var(--font-heading-scale) * 2rem);
 }
 
-.accordion details[open] > summary .icon-caret {
+.accordion details[open]>summary .icon-caret {
   transform: rotate(180deg);
 }
 
+.accordion details>summary .button--infos:after {
+  content: 'more';
+}
+
+.accordion details[open]>summary .button--infos:after {
+  content: 'close';
+}
+
 .accordion__content {
-  margin-bottom: 1.5rem;
+  margin-bottom: 3.5rem !important;
   word-break: break-word;
   overflow-x: auto;
-  padding: 0 0.6rem;
+  max-height: 30vh;
+  overflow-y: scroll;
+
 }
 
 .accordion__content img {
   max-width: 100%;
+}
+
+
+@media screen and (min-width: 990px) {
+  .accordion {
+    margin-right: 1.6rem;
+  }
 }

@@ -1,0 +1,67 @@
+{{ 'clocks.css' | asset_url | stylesheet_tag }}
+<div class="clocks_container">
+  <div class="clock_container">
+    <div class="clock">
+      <div class="wrap">
+        <span class="hour italy_hour"></span>
+        <span class="minute italy_minute"></span>
+        <span class="second italy_second"></span>
+        <span class="dot"></span>
+      </div>
+    </div>
+    <h3>Milan</h3>
+  </div>
+  <div class="clock_container">
+    <div class="clock">
+      <div class="wrap">
+        <span class="hour galapagos_hour"></span>
+        <span class="minute galapagos_minute"></span>
+        <span class="second galapagos_second"></span>
+        <span class="dot"></span>
+      </div>
+    </div>
+    <h3>Galapagos</h3>
+  </div>
+</div>
+
+<script>
+  var inc = 1000;
+
+  italyClock();
+  galapagosClock();
+
+  function italyClock() {
+    const date = new Date();
+
+    const hours = ((date.getHours() + 11) % 12) + 1;
+    const minutes = date.getMinutes();
+    const seconds = date.getSeconds();
+
+    const hour = hours * 30;
+    const minute = minutes * 6;
+    const second = seconds * 6;
+
+    document.querySelector('.italy_hour').style.transform = `rotate(${hour}deg)`;
+    document.querySelector('.italy_minute').style.transform = `rotate(${minute}deg)`;
+    document.querySelector('.italy_second').style.transform = `rotate(${second}deg)`;
+  }
+
+  function galapagosClock() {
+    const date = new Date();
+
+    const hours = ((date.getHours() + 11) % 12) - 7;
+    const minutes = date.getMinutes();
+    const seconds = date.getSeconds();
+
+    const hour = hours * 30;
+    const minute = minutes * 6;
+    const second = seconds * 6;
+
+    document.querySelector('.galapagos_hour').style.transform = `rotate(${hour}deg)`;
+    document.querySelector('.galapagos_minute').style.transform = `rotate(${minute}deg)`;
+    document.querySelector('.galapagos_second').style.transform = `rotate(${second}deg)`;
+  }
+
+  setInterval(italyClock, inc);
+  setInterval(galapagosClock, inc);
+</script>

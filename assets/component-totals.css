@@ -1,6 +1,6 @@
 .totals {
   display: flex;
-  justify-content: center;
+ justify-content: space-between;
   align-items: flex-end;
 }
 
@@ -33,8 +33,3 @@
   margin-top: 2rem;
 }
 
-@media all and (min-width: 750px) {
-  .totals {
-    justify-content: flex-end;
-  }
-}

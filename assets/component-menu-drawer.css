@@ -90,7 +90,7 @@ details[open].menu-opening > .menu-drawer__submenu {
 }
 
 .menu-drawer__navigation {
-  padding: 3rem 0;
+  padding: 3rem 1.6rem;
 }
 
 .menu-drawer__inner-submenu {
@@ -116,9 +116,8 @@ details[open].menu-opening > .menu-drawer__submenu {
 }
 
 .menu-drawer__menu-item {
-  padding: 1.1rem 3rem;
+  padding: 0 1.6rem;
   text-decoration: none;
-  font-size: 1.8rem;
 }
 
 .no-js .menu-drawer__menu-item {
@@ -261,5 +260,5 @@ details[open].menu-opening > .menu-drawer__submenu {
 }
 
 .menu-drawer .list-social__link {
-  padding: 1.1rem 1.1rem;
+  padding: 1.3rem 1.3rem;
 }

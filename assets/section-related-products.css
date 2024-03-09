@@ -1,7 +1,21 @@
 .related-products {
   display: block;
+
+}
+
+.related-products__container {
+    padding: 0 1.6rem;
 }
 
 .related-products__heading {
-  margin: 0 0 3rem;
+  grid-column-start: 1;
+  grid-column-end: 13;
+}
+
+@media screen and (min-width: 1440px) {
+  .related-products__heading {
+  display: inline-grid;
+  grid-column-start: 7;
+  grid-column-end: 9;
+}
 }

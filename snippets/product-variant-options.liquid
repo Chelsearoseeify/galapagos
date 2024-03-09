@@ -59,6 +59,7 @@
         class="disabled"
       {% endif %}
     >
+
     <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
       {{ value -}}
       <span class="visually-hidden">{{ 'products.product.variant_sold_out_or_unavailable' | t }}</span>
@@ -70,11 +71,14 @@
         selected="selected"
       {% endif %}
     >
-      {% if option_disabled -%}
-        {{- 'products.product.value_unavailable' | t: option_value: value -}}
-      {%- else -%}
-        {{- value -}}
-      {%- endif %}
+      <div>
+        {% comment %}   <span class="dot dot_{{ value | replace: ' ', '_' }}"></span> {% endcomment %}
+        {% if option_disabled -%}
+          {{- 'products.product.value_unavailable' | t: option_value: value -}}
+        {%- else -%}
+          {{- value -}}
+        {%- endif %}
+      </div>
     </option>
   {%- endif -%}
 {%- endfor -%}

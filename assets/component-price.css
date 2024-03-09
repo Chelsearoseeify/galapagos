@@ -1,11 +1,24 @@
 .price {
-  font-size: 1.6rem;
+  /* font-size: 1.6rem;
   letter-spacing: 0.1rem;
-  line-height: calc(1 + 0.5 / var(--font-body-scale));
+  line-height: calc(1 + 0.5 / var(--font-body-scale)); */
+
   color: rgb(var(--color-foreground));
+  display: flex;
+  align-content: baseline;
+  flex-wrap: wrap-reverse;
+  gap: 0;
+
 }
 
-.price > * {
+@media screen and (min-width: 750px) {
+  .price {
+    gap: 2rem
+  }
+  
+}
+
+.price>* {
   display: inline-block;
   vertical-align: top;
 }
@@ -21,6 +34,7 @@
 .price .price-item {
   display: inline-block;
   margin: 0 1rem 0 0;
+  font-style: italic;
 }
 
 .price__regular .price-item--regular {
@@ -43,17 +57,23 @@
   letter-spacing: 0.13rem;
 }
 
+
+.price--sold-out .price__availability,
+.price__regular {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
 @media screen and (min-width: 750px) {
+
+  .price__regular {
+  justify-content: flex-start;
+}
   .price--large {
     font-size: 1.8rem;
   }
 }
-
-.price--sold-out .price__availability,
-.price__regular {
-  display: block;
-}
-
 .price__sale,
 .price__availability,
 .price .price__badge-sale,
@@ -63,14 +83,10 @@
   display: none;
 }
 
-.price--sold-out .price__badge-sold-out,
-.price--on-sale .price__badge-sale,
-.volume-pricing--sale-badge .price__badge-sale {
-  display: inline-block;
-}
 
-.volume-pricing--sale-badge .price__badge-sale {
-  margin-left: 0.5rem;
+.price--sold-out .price__badge-sold-out,
+.price--on-sale .price__badge-sale {
+  display: inline-block;
 }
 
 .price--on-sale .price__sale {
@@ -86,7 +102,7 @@
 
 .price--on-sale .price-item--regular {
   text-decoration: line-through;
-  color: rgba(var(--color-foreground), 0.75);
+  color: rgba(var(--color-foreground));
   font-size: 1.3rem;
 }
 
@@ -98,4 +114,16 @@
   margin-top: 0.2rem;
   text-transform: uppercase;
   color: rgba(var(--color-foreground), 0.7);
+}
+
+.badges__container {
+  display: flex;
+  gap: 1rem;
+    padding-bottom: 1rem;
+    align-items: flex-end;
+}
+
+.price-item--tax {
+  text-transform: none;
+    margin-left: 0.5rem;
 }

@@ -1,0 +1,159 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "c78ffd17-b61a-43dd-908b-0946be2589b3": {
+      "type": "rich-text-header",
+      "blocks": {
+        "template--19947699077426__c78ffd17-b61a-43dd-908b-0946be2589b3-16891910960d71f31a-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Galapagos is a Milan-based design brand founded by Adriana Testaverde and Alessandro Pigoni",
+            "heading_size": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "template--19947699077426__c78ffd17-b61a-43dd-908b-0946be2589b3-16891910960d71f31a-0"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 60,
+        "padding_bottom": 80
+      }
+    },
+    "42dba304-c211-459c-af04-38bf0ddb6e94": {
+      "type": "image-banner",
+        "custom_css": [
+        "@media screen and (max-width: 750px) {.banner__media {height: 125vw;}"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Really_Serious_Corporate_Pic.webp",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
+    "fc0683c7-ca07-468e-b74d-3ef728548f6b": {
+      "type": "rich-text",
+      "blocks": {
+        "template--19947699077426__fc0683c7-ca07-468e-b74d-3ef728548f6b-16891910960d71f31a-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p><em>Really serious corporate pic<\/em><\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--19947699077426__fc0683c7-ca07-468e-b74d-3ef728548f6b-16891910960d71f31a-1"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "right",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "ef0ecd5d-e334-4f43-b94c-9f9a679ef5d8": {
+      "type": "rich-text",
+      "blocks": {
+        "dc70144e-2e98-47e0-8d63-7573143731c2": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Guided by the concept of daydreaming, Galapagos puts at the center of every project imaginative scenarios in unexpected expressions.<br\/>Galapagos embraces an idea of design that should free imagination and create stories to find happiness in one’s own space, envision new possible worlds, relive forgotten experiences of discovery and play; out of space and time.<\/p><p><\/p><p>Following typical and distinctive traits of the Italian way of designing, Galapagos celebrates the pleasure of play within the rational language of objects' production, conceiving stories even before products.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "dc70144e-2e98-47e0-8d63-7573143731c2"
+      ],
+      
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 32,
+        "padding_bottom": 32
+      }
+    },
+    "eb0b2867-3247-4562-9c88-a0511ea0d8e2": {
+      "type": "rich-text",
+      "blocks": {
+        "template--19947699077426__eb0b2867-3247-4562-9c88-a0511ea0d8e2-16891910960d71f31a-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Our form follows fiction. <\/br>We live the ordinary at the intersection of incredibly lighthearted ideas. <\/br>We shape new fantasies through objects that will sweep you off your feet and make you drift away in your oddest daydreams.",
+            "heading_size": "h3"
+          }
+        }
+      },
+      "block_order": [
+        "template--19947699077426__eb0b2867-3247-4562-9c88-a0511ea0d8e2-16891910960d71f31a-0"
+      ],
+     
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 32,
+        "padding_bottom": 8
+      }
+    },
+    "859a783d-7d2d-4e89-b392-7b905a607d28": {
+      "type": "rich-text",
+      "blocks": {
+        "b3878329-79f2-4efd-b13c-9439a719499e": {
+          "type": "text",
+          "settings": {
+            "text": "<p><em>Galapagos Manifesto (c.a. 2022)<\/em><\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "b3878329-79f2-4efd-b13c-9439a719499e"
+      ],
+     
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "right",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 0,
+        "padding_bottom": 64
+      }
+    },
+    "a3813045-07b8-44e6-a1a4-5cf393afe4ab": {
+      "type": "clocks"
+    }
+  },
+  "order": [
+    "main",
+    "c78ffd17-b61a-43dd-908b-0946be2589b3",
+    "42dba304-c211-459c-af04-38bf0ddb6e94",
+    "fc0683c7-ca07-468e-b74d-3ef728548f6b",
+    "ef0ecd5d-e334-4f43-b94c-9f9a679ef5d8",
+    "eb0b2867-3247-4562-9c88-a0511ea0d8e2",
+    "859a783d-7d2d-4e89-b392-7b905a607d28",
+    "a3813045-07b8-44e6-a1a4-5cf393afe4ab"
+  ]
+}

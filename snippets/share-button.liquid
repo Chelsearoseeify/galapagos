@@ -13,13 +13,9 @@
 <script src="{{ 'share.js' | asset_url }}" defer="defer"></script>
 
 <share-button id="Share-{{ section.id }}" class="share-button quick-add-hidden" {{ block.shopify_attributes }}>
-  <button class="share-button__button hidden">
-    {% render 'icon-share' %}
-    {{ block.settings.share_label | escape }}
-  </button>
   <details id="Details-{{ block.id }}-{{ section.id }}">
-    <summary class="share-button__button">
-      {% render 'icon-share' %}
+    <summary class="share-button__button text-button">
+      {% comment %}  {% render 'icon-share' %} {% endcomment %}
       {{ block.settings.share_label | escape }}
     </summary>
     <div class="share-button__fallback motion-reduce">

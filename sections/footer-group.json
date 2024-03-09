@@ -2,52 +2,96 @@
   "name": "t:sections.footer.name",
   "type": "footer",
   "sections": {
-    "footer": {
-      "type": "footer",
+    "a8c90b9e-eb93-4342-acb1-af445c8a3d4c": {
+      "type": "newsletter",
       "blocks": {
-        "footer-0": {
-          "type": "link_list",
+        "sections--19945827926322__a8c90b9e-eb93-4342-acb1-af445c8a3d4c-1689194755f0d7a520-0": {
+          "type": "heading",
           "settings": {
-            "heading": "Quick links",
-            "menu": "footer"
+            "heading": "Drift Away With Us",
+            "heading_size": "h1"
           }
         },
-        "footer-1": {
-          "type": "link_list",
+        "sections--19945827926322__a8c90b9e-eb93-4342-acb1-af445c8a3d4c-1689194755f0d7a520-1": {
+          "type": "paragraph",
           "settings": {
-            "heading": "Info",
-            "menu": "footer"
+            "text": "<p>Be the first to know about new collections and exclusive offers.<\/p>"
           }
         },
-        "footer-2": {
-          "type": "text",
+        "sections--19945827926322__a8c90b9e-eb93-4342-acb1-af445c8a3d4c-1689194755f0d7a520-2": {
+          "type": "email_form",
           "settings": {
-            "heading": "Our mission",
-            "subtext": "<p>Share contact information, store details, and brand content with your customers.<\/p>"
           }
         }
       },
       "block_order": [
-        "footer-0",
+        "sections--19945827926322__a8c90b9e-eb93-4342-acb1-af445c8a3d4c-1689194755f0d7a520-0",
+        "sections--19945827926322__a8c90b9e-eb93-4342-acb1-af445c8a3d4c-1689194755f0d7a520-1",
+        "sections--19945827926322__a8c90b9e-eb93-4342-acb1-af445c8a3d4c-1689194755f0d7a520-2"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 60,
+        "padding_bottom": 24
+      }
+    },
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "footer-1": {
+          "type": "link_list",
+          "settings": {
+            "heading": "",
+            "menu": "footermenu1"
+          }
+        },
+        "footer-0": {
+          "type": "link_list",
+          "settings": {
+            "heading": "",
+            "menu": "footermenu2"
+          }
+        },
+        "6bd961ee-eb6b-4274-a36e-cf9d9caeed35": {
+          "type": "link_list",
+          "settings": {
+            "heading": "",
+            "menu": "footermenu3"
+          }
+        },
+        "dd167273-b36c-4942-86cc-946eedd9621b": {
+          "type": "link_list",
+          "settings": {
+            "heading": "",
+            "menu": "footermenu4"
+          }
+        }
+      },
+      "block_order": [
         "footer-1",
-        "footer-2"
+        "footer-0",
+        "6bd961ee-eb6b-4274-a36e-cf9d9caeed35",
+        "dd167273-b36c-4942-86cc-946eedd9621b"
       ],
       "settings": {
         "color_scheme": "background-1",
-        "newsletter_enable": true,
+        "newsletter_enable": false,
         "newsletter_heading": "Subscribe to our emails",
-        "show_social": true,
+        "enable_follow_on_shop": true,
+        "show_social": false,
         "enable_country_selector": false,
         "enable_language_selector": false,
-        "payment_enable": true,
+        "payment_enable": false,
         "show_policy": false,
-        "margin_top": 48,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "margin_top": 0,
+        "padding_top": 0,
+        "padding_bottom": 0
       }
     }
   },
   "order": [
+    "a8c90b9e-eb93-4342-acb1-af445c8a3d4c",
     "footer"
   ]
 }

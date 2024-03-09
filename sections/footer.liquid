@@ -27,7 +27,7 @@
   }
 {%- endstyle -%}
 
-<footer class="footer color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
+<footer class="border-top footer color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
   {%- liquid
     assign has_social_icons = true
     if settings.social_facebook_link == blank and settings.social_instagram_link == blank and settings.social_youtube_link == blank and settings.social_tiktok_link == blank and settings.social_twitter_link == blank and settings.social_pinterest_link == blank and settings.social_snapchat_link == blank and settings.social_tumblr_link == blank and settings.social_vimeo_link == blank
@@ -44,7 +44,8 @@
   -%}
   {%- if section.blocks.size > 0
     or section.settings.newsletter_enable
-    or section.settings.show_social and has_social_icons == true
+    or section.settings.show_social
+    and has_social_icons == true
     or section.settings.enable_follow_on_shop
   -%}
     {%- unless only_empty_brand -%}
@@ -60,14 +61,18 @@
             endif
           -%}
           <div
-            class="footer__blocks-wrapper grid grid--1-col grid--2-col grid--4-col-tablet {{ footer_grid_class }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+            class="footer__blocks-wrapper grid-container {% comment %} grid grid--1-col grid--2-col grid--4-col-tablet {% endcomment %} {{ footer_grid_class }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
             {% if settings.animations_reveal_on_scroll %}
               data-cascade
             {% endif %}
           >
+            <div class="footer-block footer-block__brand-infos {% if block.type == 'link_list' %} footer-block--menu{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %} footer__menu-item">
+              © 2023, GALAPAGOS <br>
+              (A BRAND) BY FINDS YOU WELL SRL
+            </div>
             {%- for block in section.blocks -%}
               <div
-                class="footer-block grid__item{% if block.type == 'link_list' %} footer-block--menu{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                class="footer-block {% if block.type == 'link_list' %} footer-block--menu{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
                 {{ block.shopify_attributes }}
                 {% if settings.animations_reveal_on_scroll %}
                   data-cascade
@@ -89,7 +94,7 @@
                     {%- if block.settings.menu != blank -%}
                       <ul class="footer-block__details-content list-unstyled">
                         {%- for link in block.settings.menu.links -%}
-                          <li>
+                          <li class="footer__menu-item">
                             <a
                               href="{{ link.url }}"
                               class="link link--text list-menu__item list-menu__item--link{% if link.active %} list-menu__item--active{% endif %}"
@@ -155,221 +160,122 @@
                 {%- endcase -%}
               </div>
             {%- endfor -%}
+            <div class="footer-block {% if block.type == 'link_list' %} footer-block--menu{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %} footer-block__logos">
+              <div class="footer-block__logos-container">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_41_27)">
+                  <path d="M15.62 0.5C24.15 0.5 31.12 6.99 31.12 16C31.12 25.01 24.15 31.5 15.62 31.5C7.09 31.5 0.119995 25.01 0.119995 16C0.119995 6.99 7.09 0.5 15.62 0.5ZM15.62 29.37C22.97 29.37 28.94 23.78 28.94 16C28.94 8.22 22.97 2.63 15.62 2.63C8.26999 2.63 2.3 8.23 2.3 16C2.3 23.77 8.26999 29.37 15.62 29.37ZM15.62 6.66C20.79 6.66 23.73 9.84 24.06 14.48L21.55 14.62C21.36 11.35 19.32 9.03 15.72 9.03C12.12 9.03 9.64999 11.68 9.64999 16.05C9.64999 20.42 12.11 23.02 15.72 23.02C19.33 23.02 21.36 20.7 21.55 17.43L24.06 17.62C23.73 22.26 20.79 25.44 15.62 25.44C10.45 25.44 6.75999 21.6 6.75999 16.06C6.75999 10.52 10.65 6.67 15.62 6.67V6.66Z" fill="black"/>
+                  </g>
+                  <defs>
+                  <clipPath id="clip0_41_27">
+                  <rect width="31" height="31" fill="white" transform="translate(0.119995 0.5)"/>
+                  </clipPath>
+                  </defs>
+                </svg>
+                <svg width="36" height="32" viewBox="0 0 36 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_41_24)">
+                  <path d="M6.25998 31.34C6.46998 31.71 8.12998 31.4 9.25998 30.79C10.36 30.21 10.95 29.1 10.55 28.37C9.74998 26.8 5.18998 28.95 4.93998 28.58C4.65998 28.21 7.90998 26.19 11.35 23.85C16.22 20.54 21.96 16.67 22.54 17.68C22.94 18.36 21.99 20.13 20.67 22.04C19.54 23.67 18.43 24.62 17.67 25.35C17.27 25.75 17.24 26.24 17.42 26.52C17.67 26.89 18.25 26.92 18.68 26.67C19.48 26.21 20.83 25.17 22.6 24.22C24.37 23.27 25.88 22.9 26.8 22.44C27.14 22.29 27.35 21.92 27.23 21.64C27.08 21.3 26.74 21.24 26.34 21.3C25.02 21.51 22.85 22.65 22.63 22.28C22.32 21.76 26.86 17.16 25.51 15.41C24.22 13.69 21.52 15.29 21.28 14.92C21.13 14.71 21.59 14.34 21.46 14.09C21.4 13.97 21.21 13.97 21 14.06C19.16 14.95 12.78 17.77 11.41 18.54C11.2 18.66 11.1 18.82 11.16 18.94C11.41 19.46 13.49 18.14 13.8 18.76C14.11 19.34 8.89998 23.42 5.51998 26.12C3.33998 27.84 0.51998 29.56 1.25998 30.85C1.83998 31.86 4.35998 30.57 5.97998 30.08C6.58998 29.93 7.26998 29.83 7.41998 30.11C7.62998 30.51 5.79998 30.57 6.25998 31.34ZM6.86998 17.96C9.77998 16.18 16.74 12.53 20.27 11.24C20.73 11.09 21.04 11.09 21.13 11.24C21.22 11.39 20.88 11.58 20.58 11.73C19.42 12.31 15.92 14.31 14.48 15.35C14.02 15.69 13.93 15.9 14.02 16.03C14.14 16.18 14.48 16.09 14.82 15.94C16.9 14.96 21.5 12.56 23.65 11.71C24.05 11.56 24.17 11.4 24.11 11.25C24.05 11.1 23.74 11.1 23.53 11.1C23.32 11.1 23.19 11.01 23.53 10.73C24.73 9.84 30.76 7.17 30.98 7.54C31.38 8.22 25.8 10.85 26.57 12.11C26.88 12.66 27.58 12.32 27.67 12.51C27.76 12.7 26.9 13.28 27.36 13.95C27.51 14.16 27.76 14.29 28.62 14.29C29.82 14.29 31.65 13 32.3 13.25C32.55 13.34 32.21 13.68 32.55 13.8C32.86 13.92 33.22 13.34 33.32 12.88C33.38 12.51 33.23 12.27 32.89 12.2C32.52 12.14 32.09 12.2 32.09 12.08C32.09 11.93 32.64 11.77 32.92 11.74C33.2 11.71 33.75 11.71 33.84 11.95C33.9 12.13 33.66 12.59 34.02 12.72C34.51 12.87 35.03 11.92 35.03 11.25C35.03 10.94 34.91 10.42 33.8 10.42C31.84 10.42 30.21 11.31 29.91 10.88C29.2 9.84 36.96 6.68 35.92 4.99C34.97 3.49 25.77 7.51 23.87 8.06C23.62 8.12 23.53 8.06 23.5 7.97C23.44 7.79 23.84 7.48 23.71 7.23C23.65 7.11 23.53 7.11 23.16 7.2C21.96 7.51 19.02 8.58 17.7 9.04C17.39 9.16 17.24 9.16 17.21 9.07C17.18 9.01 17.3 8.86 17.58 8.7C20.31 7.2 24.14 5.57 27.39 4.8C27.82 4.71 27.97 4.62 27.97 4.4C27.97 4.15 27.66 4.15 27.66 4.03C27.66 3.88 27.78 3.85 27.78 3.69C27.78 3.57 27.53 3.57 27.53 3.44C27.53 3.19 28.02 3.01 28.02 2.83C28.02 2.58 27.41 2.68 27.41 2.31C27.41 1.94 27.66 0.5 25.82 0.5C23.49 0.5 22.72 4.15 20.98 5.5C20.37 5.96 18.83 7.1 18.68 6.91C18.59 6.82 18.74 6.76 18.74 6.3C18.74 5.9 18.46 5.53 17.94 5.53C17.02 5.53 15.49 6.7 13 7.86C9.62998 9.49 5.97998 11.2 3.40998 12.13C3.00998 12.28 2.57998 12.34 2.42998 11.98C2.30998 11.67 2.51998 11.34 2.79998 11.24C3.31998 11.06 3.71998 11.15 3.77998 10.75C3.80998 10.47 3.31998 10.23 2.82998 10.23C1.01998 10.23 -0.17002 11.52 0.18998 12.78C0.36998 13.46 0.85998 13.49 0.92998 13.7C0.98998 13.88 0.61998 14.31 0.86998 14.8C1.07998 15.23 1.50998 15.44 2.06998 15.41C3.04998 15.35 3.65998 14.61 4.91998 13.69C7.98998 11.45 14.3 8.78 14.64 9.42C14.82 9.79 13.32 10.74 12.71 11.17C12.53 11.29 12.5 11.48 12.56 11.57C12.62 11.69 12.81 11.75 13.05 11.63C14.46 10.99 16.54 10.25 18.11 9.82C18.63 9.67 18.88 9.67 18.94 9.82C18.97 9.94 18.85 10.1 18.27 10.37C16.55 11.17 13.24 12.76 12.05 13.16C11.77 13.25 11.55 13.22 11.46 13.03C11.37 12.88 11.46 12.69 11.37 12.51C11.28 12.36 11.08 12.34 10.83 12.49C10.06 12.95 8.98998 13.5 8.09998 13.87C7.75998 14.02 7.63998 14.24 7.72998 14.42C7.90998 14.79 8.82998 14.45 9.01998 14.73C9.30998 15.16 7.48998 16.26 6.44998 17.09C5.75998 17.63 5.66998 17.87 5.82998 18.11C5.98998 18.35 6.32998 18.32 6.90998 17.95L6.86998 17.96Z" fill="black"/>
+                  </g>
+                  <defs>
+                  <clipPath id="clip0_41_24">
+                  <rect width="35.88" height="31" fill="white" transform="translate(0.119995 0.5)"/>
+                  </clipPath>
+                  </defs>
+                </svg>
+              </div>
+            </div>
           </div>
         {%- endif -%}
 
-        <div
-          class="footer-block--newsletter{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-          {% if settings.animations_reveal_on_scroll %}
-            data-cascade
-          {% endif %}
-        >
-          {%- if section.settings.newsletter_enable -%}
-            <div class="footer-block__newsletter">
-              {%- if section.settings.newsletter_heading != blank -%}
-                <h2 class="footer-block__heading inline-richtext">{{ section.settings.newsletter_heading }}</h2>
-              {%- endif -%}
-              {%- form 'customer', id: 'ContactFooter', class: 'footer__newsletter newsletter-form' -%}
-                <input type="hidden" name="contact[tags]" value="newsletter">
-                <div class="newsletter-form__field-wrapper">
-                  <div class="field">
-                    <input
-                      id="NewsletterForm--{{ section.id }}"
-                      type="email"
-                      name="contact[email]"
-                      class="field__input"
-                      value="{{ form.email }}"
-                      aria-required="true"
-                      autocorrect="off"
-                      autocapitalize="off"
-                      autocomplete="email"
-                      {% if form.errors %}
-                        autofocus
-                        aria-invalid="true"
-                        aria-describedby="ContactFooter-error"
-                      {% elsif form.posted_successfully? %}
-                        aria-describedby="ContactFooter-success"
-                      {% endif %}
-                      placeholder="{{ 'newsletter.label' | t }}"
-                      required
-                    >
-                    <label class="field__label" for="NewsletterForm--{{ section.id }}">
-                      {{ 'newsletter.label' | t }}
-                    </label>
-                    <button
-                      type="submit"
-                      class="newsletter-form__button field__button"
-                      name="commit"
-                      id="Subscribe"
-                      aria-label="{{ 'newsletter.button_label' | t }}"
-                    >
-                      {% render 'icon-arrow' %}
-                    </button>
-                  </div>
-                  {%- if form.errors -%}
-                    <small class="newsletter-form__message form__message" id="ContactFooter-error">
-                      {%- render 'icon-error' -%}
-                      {{- form.errors.translated_fields.email | capitalize }}
-                      {{ form.errors.messages.email -}}
-                    </small>
-                  {%- endif -%}
-                </div>
-                {%- if form.posted_successfully? -%}
-                  <h3
-                    class="newsletter-form__message newsletter-form__message--success form__message"
-                    id="ContactFooter-success"
-                    tabindex="-1"
-                    autofocus
-                  >
-                    {% render 'icon-success' -%}
-                    {{- 'newsletter.success' | t }}
-                  </h3>
+        {% comment %}
+          <div
+            class="footer-block--newsletter{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+            {% if settings.animations_reveal_on_scroll %}
+              data-cascade
+            {% endif %}
+          >
+            {%- if section.settings.newsletter_enable -%}
+              <div class="footer-block__newsletter">
+                {%- if section.settings.newsletter_heading != blank -%}
+                  <h2 class="footer-block__heading inline-richtext">{{ section.settings.newsletter_heading }}</h2>
                 {%- endif -%}
-              {%- endform -%}
-            </div>
-          {%- endif -%}
+                {%- form 'customer', id: 'ContactFooter', class: 'footer__newsletter newsletter-form' -%}
+                  <input type="hidden" name="contact[tags]" value="newsletter">
+                  <div class="newsletter-form__field-wrapper">
+                    <div class="field">
+                      <input
+                        id="NewsletterForm--{{ section.id }}"
+                        type="email"
+                        name="contact[email]"
+                        class="field__input"
+                        value="{{ form.email }}"
+                        aria-required="true"
+                        autocorrect="off"
+                        autocapitalize="off"
+                        autocomplete="email"
+                        {% if form.errors %}
+                          autofocus
+                          aria-invalid="true"
+                          aria-describedby="ContactFooter-error"
+                        {% elsif form.posted_successfully? %}
+                          aria-describedby="ContactFooter-success"
+                        {% endif %}
+                        placeholder="{{ 'newsletter.label' | t }}"
+                        required
+                      >
+                      <label class="field__label" for="NewsletterForm--{{ section.id }}">
+                        {{ 'newsletter.label' | t }}
+                      </label>
+                      <button
+                        type="submit"
+                        class="newsletter-form__button field__button"
+                        name="commit"
+                        id="Subscribe"
+                        aria-label="{{ 'newsletter.button_label' | t }}"
+                      >
+                        {% render 'icon-arrow' %}
+                      </button>
+                    </div>
+                    {%- if form.errors -%}
+                      <small class="newsletter-form__message form__message" id="ContactFooter-error">
+                        {%- render 'icon-error' -%}
+                        {{- form.errors.translated_fields.email | capitalize }}
+                        {{ form.errors.messages.email -}}
+                      </small>
+                    {%- endif -%}
+                  </div>
+                  {%- if form.posted_successfully? -%}
+                    <h3
+                      class="newsletter-form__message newsletter-form__message--success form__message"
+                      id="ContactFooter-success"
+                      tabindex="-1"
+                      autofocus
+                    >
+                      {% render 'icon-success' -%}
+                      {{- 'newsletter.success' | t }}
+                    </h3>
+                  {%- endif -%}
+                {%- endform -%}
+              </div>
+            {%- endif -%}
 
-          {%- if shop.features.follow_on_shop? and section.settings.enable_follow_on_shop -%}
-            <div class="footer__follow-on-shop">
-              {% comment %} TODO: enable theme-check once `login_button` is accepted as valid filter {% endcomment %}
-              {% # theme-check-disable %}
-              {{ shop | login_button: action: 'follow' }}
-              {% # theme-check-enable %}
-            </div>
-          {%- endif -%}
+            {%- if shop.features.follow_on_shop? and section.settings.enable_follow_on_shop -%}
+              <div class="footer__follow-on-shop">
+                {% comment %} TODO: enable theme-check once `login_button` is accepted as valid filter {% endcomment %}
+                {% # theme-check-disable %}
+                {{ shop | login_button: action: 'follow' }}
+                {% # theme-check-enable %}
+              </div>
+            {%- endif -%}
 
-          {%- if section.settings.show_social and has_social_icons -%}
-            {%- render 'social-icons', class: 'footer__list-social' -%}
-          {%- endif -%}
-        </div>
+            {%- if section.settings.show_social and has_social_icons -%}
+              {%- render 'social-icons', class: 'footer__list-social' -%}
+            {%- endif -%}
+          </div>
+        {% endcomment %}
       </div>
     {%- endunless -%}
   {%- endif -%}
-
-  <div
-    class="footer__content-bottom{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-    {% if settings.animations_reveal_on_scroll %}
-      data-cascade
-    {% endif %}
-  >
-    <div class="footer__content-bottom-wrapper page-width">
-      <div class="footer__column footer__localization isolate">
-        {%- if section.settings.enable_country_selector and localization.available_countries.size > 1 -%}
-          <noscript>
-            {%- form 'localization', id: 'FooterCountryFormNoScript', class: 'localization-form' -%}
-              <div class="localization-form__select">
-                <h2 class="visually-hidden" id="FooterCountryLabelNoScript">{{ 'localization.country_label' | t }}</h2>
-                <select
-                  class="localization-selector link"
-                  name="country_code"
-                  aria-labelledby="FooterCountryLabelNoScript"
-                >
-                  {%- for country in localization.available_countries -%}
-                    <option
-                      value="{{ country.iso_code }}"
-                      {%- if country.iso_code == localization.country.iso_code %}
-                        selected
-                      {% endif %}
-                    >
-                      {{ country.name }} ({{ country.currency.iso_code }}
-                      {{ country.currency.symbol }})
-                    </option>
-                  {%- endfor -%}
-                </select>
-                {% render 'icon-caret' %}
-              </div>
-              <button class="button button--tertiary">{{ 'localization.update_country' | t }}</button>
-            {%- endform -%}
-          </noscript>
-          <localization-form>
-            {%- form 'localization', id: 'FooterCountryForm', class: 'localization-form' -%}
-              <div class="no-js-hidden">
-                <h2 class="caption-large text-body" id="FooterCountryLabel">{{ 'localization.country_label' | t }}</h2>
-                {%- render 'country-localization', localPosition: 'FooterCountry' -%}
-              </div>
-            {%- endform -%}
-          </localization-form>
-        {%- endif -%}
-
-        {%- if section.settings.enable_language_selector and localization.available_languages.size > 1 -%}
-          <noscript>
-            {%- form 'localization', id: 'FooterLanguageFormNoScript', class: 'localization-form' -%}
-              <div class="localization-form__select">
-                <h2 class="visually-hidden" id="FooterLanguageLabelNoScript">
-                  {{ 'localization.language_label' | t }}
-                </h2>
-                <select
-                  class="localization-selector link"
-                  name="locale_code"
-                  aria-labelledby="FooterLanguageLabelNoScript"
-                >
-                  {%- for language in localization.available_languages -%}
-                    <option
-                      value="{{ language.iso_code }}"
-                      lang="{{ language.iso_code }}"
-                      {%- if language.iso_code == localization.language.iso_code %}
-                        selected
-                      {% endif %}
-                    >
-                      {{ language.endonym_name | capitalize }}
-                    </option>
-                  {%- endfor -%}
-                </select>
-                {% render 'icon-caret' %}
-              </div>
-              <button class="button button--tertiary">{{ 'localization.update_language' | t }}</button>
-            {%- endform -%}
-          </noscript>
-
-          <localization-form>
-            {%- form 'localization', id: 'FooterLanguageForm', class: 'localization-form' -%}
-              <div class="no-js-hidden">
-                <h2 class="caption-large text-body" id="FooterLanguageLabel">
-                  {{ 'localization.language_label' | t }}
-                </h2>
-                {%- render 'language-localization', localPosition: 'FooterLanguage' -%}
-              </div>
-            {%- endform -%}
-          </localization-form>
-        {%- endif -%}
-      </div>
-      <div class="footer__column footer__column--info">
-        {%- if section.settings.payment_enable -%}
-          <div class="footer__payment">
-            <span class="visually-hidden">{{ 'sections.footer.payment' | t }}</span>
-            <ul class="list list-payment" role="list">
-              {%- for type in shop.enabled_payment_types -%}
-                <li class="list-payment__item">
-                  {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
-                </li>
-              {%- endfor -%}
-            </ul>
-          </div>
-        {%- endif -%}
-      </div>
-    </div>
-    <div class="footer__content-bottom-wrapper page-width{% if section.settings.enable_country_selector == false and section.settings.enable_language_selector == false %} footer__content-bottom-wrapper--center{% endif %}">
-      <div class="footer__copyright caption">
-        <small class="copyright__content"
-          >&copy; {{ 'now' | date: '%Y' }}, {{ shop.name | link_to: routes.root_url -}}
-        </small>
-        <small class="copyright__content">{{ powered_by_link }}</small>
-        {%- if section.settings.show_policy -%}
-          <ul class="policies list-unstyled">
-            {%- for policy in shop.policies -%}
-              {%- if policy != blank -%}
-                <li>
-                  <small class="copyright__content"
-                    ><a href="{{ policy.url }}">{{ policy.title }}</a></small
-                  >
-                </li>
-              {%- endif -%}
-            {%- endfor -%}
-          </ul>
-        {%- endif -%}
-      </div>
-    </div>
-  </div>
 </footer>
 
 {% schema %}

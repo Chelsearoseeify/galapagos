@@ -1,0 +1,148 @@
+.rich-text {
+  z-index: 1;
+}
+
+/* .rich-text__wrapper {
+  display: flex;
+  justify-content: center;
+  width: calc(100% - 4rem / var(--font-body-scale));
+} */
+
+.rich-text__wrapper {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: 16px;
+  width: 100%;
+  padding: 0 1.6rem;
+}
+
+
+.rich-text:not(.rich-text--full-width) .rich-text__wrapper {
+  margin: auto;
+  width: calc(100% - 8rem / var(--font-body-scale));
+}
+
+.rich-text__blocks {
+  display: inline-grid;
+  width: 100%;
+  grid-column-start: 1;
+  grid-column-end: 13;
+
+}
+
+.rich-text__wrapper--left {
+  justify-content: flex-start;
+}
+
+.rich-text__wrapper--right {
+  justify-content: flex-end;
+}
+
+.rich-text__blocks * {
+  overflow-wrap: break-word;
+}
+
+.rich-text__blocks>* {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.rich-text__blocks>*+* {
+  margin-top: 2rem;
+}
+
+.rich-text__blocks>*+a {
+  margin-top: 3rem;
+}
+
+.rich-text__buttons {
+  display: inline-flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  width: 100%;
+  max-width: 45rem;
+  word-break: break-word;
+}
+
+.rich-text__buttons--multiple>* {
+  flex-grow: 1;
+  min-width: 22rem;
+}
+
+.rich-text__buttons+.rich-text__buttons {
+  margin-top: 1rem;
+}
+
+.rich-text__blocks.left .rich-text__buttons {
+  justify-content: flex-start;
+}
+
+.rich-text__blocks.right .rich-text__buttons {
+  justify-content: flex-end;
+}
+
+
+
+p {
+  font-size: 2.2rem;
+  line-height: 28px;
+}
+
+p>em {
+  font-size: 1.8rem;
+}
+
+
+@media screen and (max-width: 749px) {
+
+  .rich-text__heading.h1 {
+    font-size: 3.6rem !important;
+    line-height: 40px;
+  }
+
+  .rich-text__heading.h3 {
+    font-size: 2.8rem !important;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+
+  p {
+    font-size: 2.4rem;
+    line-height: 28px;
+  }
+
+  p>em {
+    font-size: 1.8rem;
+  }
+
+  .rich-text__blocks {
+    width: 100%;
+    grid-column-start: 2;
+    grid-column-end: 12;
+  }
+}
+
+
+@media screen and (min-width: 1728px) {
+  p {
+    font-size: 2.8rem;
+    line-height: 32px;
+  }
+
+  p>em {
+    font-size: 2.2rem;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  p {
+    font-size: 3.4rem;
+    line-height: 38px;
+  }
+
+  p>em {
+    font-size: 2.4rem;
+  }
+}

@@ -77,17 +77,17 @@
       {% endfor %}
 
       {{ scheme_classes | prepend: 'body' }} {
-        color: rgba(var(--color-foreground), 0.75);
+        color: rgba(var(--color-foreground));
         background-color: rgb(var(--color-background));
       }
 
       :root {
-        --font-body-family: {{ settings.type_body_font.family }}, {{ settings.type_body_font.fallback_families }};
+        --font-body-family: 'ArialNarrow' !important;
         --font-body-style: {{ settings.type_body_font.style }};
         --font-body-weight: {{ settings.type_body_font.weight }};
         --font-body-weight-bold: {{ settings.type_body_font.weight | plus: 300 | at_most: 1000 }};
 
-        --font-heading-family: {{ settings.type_header_font.family }}, {{ settings.type_header_font.fallback_families }};
+        --font-heading-family:  'Galapagos' !important;
         --font-heading-style: {{ settings.type_header_font.style }};
         --font-heading-weight: {{ settings.type_header_font.weight }};
 
@@ -162,8 +162,8 @@
 
         --grid-desktop-vertical-spacing: {{ settings.spacing_grid_vertical }}px;
         --grid-desktop-horizontal-spacing: {{ settings.spacing_grid_horizontal }}px;
-        --grid-mobile-vertical-spacing: {{ settings.spacing_grid_vertical | divided_by: 2 }}px;
-        --grid-mobile-horizontal-spacing: {{ settings.spacing_grid_horizontal | divided_by: 2 }}px;
+        --grid-mobile-vertical-spacing: {{ settings.spacing_grid_vertical | divided_by: 1 }}px;
+        --grid-mobile-horizontal-spacing: {{ settings.spacing_grid_horizontal | divided_by: 1 }}px;
 
         --text-boxes-border-opacity: {{ settings.text_boxes_border_opacity | divided_by: 100.0 }};
         --text-boxes-border-width: {{ settings.text_boxes_border_thickness }}px;
@@ -230,6 +230,31 @@
         font-weight: var(--font-body-weight);
       }
 
+      @font-face {
+        font-family: "Galapagos";
+        src: url(https://cdn.shopify.com/s/files/1/0791/5464/3250/files/Galapagos-Regular.woff2?v=1689183904) format('woff2');
+      }
+
+      @font-face {
+        font-family: "ArialNarrow";
+        src: url(https://cdn.shopify.com/s/files/1/0791/5464/3250/files/ARIALN.woff?v=1689185302) format('woff');
+      }
+
+      @font-face {
+        font-family: "ArialNarrowBold";
+        src: url(https://cdn.shopify.com/s/files/1/0791/5464/3250/files/arial-narrow-bold.woff?v=1689185618) format('woff');
+      }
+
+      @font-face {
+        font-family: "ArialNarrowItalic";
+        src: url(https://cdn.shopify.com/s/files/1/0791/5464/3250/files/arial-narrow-italic.woff?v=1689185617) format('woff');
+      }
+
+      @font-face {
+        font-family: "ArialNarrowBoldItalic";
+        src: url(https://cdn.shopify.com/s/files/1/0791/5464/3250/files/arial-narrow-bold-italic.woff?v=1689185618) format('woff');
+      }
+
       @media screen and (min-width: 750px) {
         body {
           font-size: 1.6rem;
@@ -268,7 +293,7 @@
     </script>
   </head>
 
-  <body class="gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">
+  <body class="template-{{ page.title }} gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
       {{ 'accessibility.skip_to_text' | t }}
     </a>
@@ -312,15 +337,6 @@
         unavailable_with_option: `{{ 'products.product.value_unavailable' | t: option_value: '[value]' }}`,
       };
 
-      window.quickOrderListStrings = {
-        itemsAdded: `{{ 'sections.quick_order_list.items_added.other' | t: quantity: '[quantity]' }}`,
-        itemAdded: `{{ 'sections.quick_order_list.items_added.one' | t: quantity: '[quantity]' }}`,
-        itemsRemoved: `{{ 'sections.quick_order_list.items_removed.other' | t: quantity: '[quantity]' }}`,
-        itemRemoved: `{{ 'sections.quick_order_list.items_removed.one' | t: quantity: '[quantity]' }}`,
-        viewCart: `{{- 'sections.quick_order_list.view_cart' | t -}}`,
-        each: `{{- 'sections.quick_order_list.each' | t: money: '[money]' }}`,
-      };
-
       window.accessibilityStrings = {
         imageAvailable: `{{ 'products.product.media.image_available' | t: index: '[index]' }}`,
         shareSuccess: `{{ 'general.share.success_message' | t }}`,
@@ -329,6 +345,29 @@
         recipientFormExpanded: `{{ 'recipient.form.expanded' | t }}`,
         recipientFormCollapsed: `{{ 'recipient.form.collapsed' | t }}`,
       };
+
+      let collapsibles = document.querySelectorAll('.product__accordion');
+      collapsibles.forEach((collapsible) => {
+        const details = collapsible.children[0];
+
+        details.addEventListener('click', function () {
+          collapsibles.forEach((element) => {
+            const eldetails = element.children[0];
+            if (this.id !== eldetails.id) {
+              if (eldetails.hasAttribute('open')) eldetails.removeAttribute('open');
+            }
+          });
+        });
+      });
+
+      console.log(document.getElementById('video'));
+      document.getElementById('video').addEventListener('mouseover', function () {
+        if (this.hasAttribute('controls')) {
+          this.removeAttribute('controls');
+        } else {
+          this.setAttribute('controls', 'controls');
+        }
+      });
     </script>
 
     {%- if settings.predictive_search_enabled -%}
